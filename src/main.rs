@@ -3,7 +3,20 @@ use std::cmp::Ordering;
 use std::io;
 
 fn main() {
-    guessing_game();
+    loop {
+        guessing_game();
+    
+        println!("do ya wanna get wreckt again? (y/n)");
+        let mut yesnt = String::new();
+        io::stdin()
+            .read_line(&mut yesnt)
+            .expect("failure");
+
+        if yesnt.trim().to_lowercase() != "y"{
+           println!("tata byebye");
+           break;
+    }
+}
 }
 
 fn guessing_game() {
@@ -39,15 +52,5 @@ fn guessing_game() {
                 break;
             }
         }
-    }
-    println!("do ya wanna get wreckt again? (y/n)");
-    let mut yesnt = String::new();
-    io::stdin()
-        .readline(&mut yesnt)
-        .expect("failure");
-
-    if yesnt.trim().to_lowercase() != 'y'{
-        println!("tata byebye");
-        break;
     }
 }
