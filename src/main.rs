@@ -40,4 +40,14 @@ fn guessing_game() {
             }
         }
     }
+    println!("do ya wanna get wreckt again? (y/n)");
+    let mut yesnt = String::new();
+    io::stdin()
+        .readline(&mut yesnt)
+        .expect("failure");
+
+    if yesnt.trim().to_lowercase() != 'y'{
+        println!("tata byebye");
+        break;
+    }
 }
