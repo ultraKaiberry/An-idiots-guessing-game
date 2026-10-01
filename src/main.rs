@@ -13,7 +13,7 @@ fn main() {
             .expect("failure");
 
         if yesnt.trim().to_lowercase() != "y"{
-           println!("tata byebye");
+           println!("\n thankyou for playing");
            break;
     }
 }
@@ -25,7 +25,7 @@ fn guessing_game() {
     let secret_number = rand::thread_rng().gen_range(1..=100);
 
     loop {
-        println!("please input your guess.");
+        println!("please input your guess: ");
         let mut input = String::new();
 
         io::stdin()
@@ -72,7 +72,7 @@ fn guessing_game() {
         }
 
             Ordering::Equal => { 
-                println!("you win!!, your total count was {}", total_count);
+                println!("You win, your total count was {}", total_count);
                 break;
             }
         }
